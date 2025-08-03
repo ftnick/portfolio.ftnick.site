@@ -21,55 +21,43 @@
             max-width: 600px;
             padding: 2rem;
         }
-        .loading {
-            font-size: 1.2rem;
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 2rem;
         }
-        .spinner {
-            border: 3px solid #333;
-            border-top: 3px solid #3b82f6;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 2rem;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .fallback {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-        }
-        .fallback a {
-            color: #3b82f6;
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
             text-decoration: none;
-            margin: 0 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
-        .fallback a:hover {
-            text-decoration: underline;
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="spinner"></div>
-        <div class="loading">Redirecting to 404 page...</div>
-        
-        <div class="fallback">
-            <p>If you're not redirected automatically, try these links:</p>
-            <a href="/">Home</a>
-            <a href="/#projects">Projects</a>
-            <a href="/#about">About</a>
-            <a href="/#contact">Contact</a>
-        </div>
+        <div class="error-code">404</div>
+        <a href="/" class="home-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+            </svg>
+            Home
+        </a>
     </div>
-
-    <script>
-        // Redirect to the React app's 404 page
-        window.location.href = '/404';
-    </script>
 </body>
 </html> 
